@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Calendar } from '@/components/ui/calendar';
 import Icon from '@/components/ui/icon';
+import { Link } from 'react-router-dom';
 
 const services = [
   {
@@ -138,14 +139,15 @@ export default function Index() {
     <div className="min-h-screen">
       <header className="border-b sticky top-0 bg-white/80 backdrop-blur-md z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <div className="text-3xl">📅</div>
             <h1 className="text-2xl font-bold gradient-text">BookNow</h1>
-          </div>
+          </Link>
           <nav className="hidden md:flex gap-6">
             <a href="#services" className="hover:text-primary transition-colors">Услуги</a>
-            <a href="#benefits" className="hover:text-primary transition-colors">Преимущества</a>
-            <a href="#articles" className="hover:text-primary transition-colors">Статьи</a>
+            <Link to="/benefits" className="hover:text-primary transition-colors">Преимущества</Link>
+            <Link to="/about" className="hover:text-primary transition-colors">О нас</Link>
+            <Link to="/blog" className="hover:text-primary transition-colors">Блог</Link>
           </nav>
           <Button className="gradient-primary">
             <Icon name="LogIn" className="mr-2 h-4 w-4" />
@@ -416,10 +418,10 @@ export default function Index() {
             <div>
               <h4 className="font-bold mb-4">Компания</h4>
               <ul className="space-y-2 text-sm text-background/80">
-                <li><a href="#" className="hover:text-background transition-colors">О нас</a></li>
+                <li><Link to="/about" className="hover:text-background transition-colors">О нас</Link></li>
                 <li><a href="#" className="hover:text-background transition-colors">Вакансии</a></li>
                 <li><a href="#" className="hover:text-background transition-colors">Контакты</a></li>
-                <li><a href="#" className="hover:text-background transition-colors">Блог</a></li>
+                <li><Link to="/blog" className="hover:text-background transition-colors">Блог</Link></li>
               </ul>
             </div>
             <div>
